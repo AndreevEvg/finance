@@ -1,0 +1,5 @@
+app_finance:
+    resource: "@AppFinanceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

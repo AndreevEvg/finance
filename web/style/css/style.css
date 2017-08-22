@@ -1,0 +1,22 @@
+.container .nav nav-pills a {
+  cursor: pointer !important;
+}
+.container .nav li a:hover {
+  background: none !important;
+}
+.container .panel {
+  margin-top: 20px !important;
+}
+.container .heading {
+  background-color: #dff0d8 !important;
+}
+.container .form-horizontal {
+  padding: 20px !important;
+}
+.container .group_button {
+  margin-top: 20px;
+}
+.glyphicon-search {
+  margin-right: 5px !important;
+}
+/*# sourceMappingURL=style.css.map */

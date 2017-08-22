@@ -1,0 +1,15 @@
+app_finance_homepage:
+    path: /
+    defaults: { _controller: AppFinanceBundle:Default:index }
+
+create:
+    path: /create/
+    defaults: { _controller: AppFinanceBundle:Default:createRecord }
+    
+reports:
+    path: /reports/
+    defaults: { _controller: AppFinanceBundle:Default:reports }
+    
+hello:
+    path: /hello/{name}
+    defaults: { _controller: AppFinanceBundle:Default:hello }
