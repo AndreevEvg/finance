@@ -1,6 +1,7 @@
 {% extends "AppFinanceBundle::layout.html.twig" %}
 
 {% block content %}
+    <h1>{{ name }}</h1>
     {% for flash_message in app.session.flashBag.get('notice') %}
         <div class="flash-notice">
             {{ flash_message }}

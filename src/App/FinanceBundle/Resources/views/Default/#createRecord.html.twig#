@@ -1,0 +1,36 @@
+{% extends "AppFinanceBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-body form_body">
+            <form class="form-horizontal" action="{{ path('create') }}" method="post" {{ form_enctype(form) }}>
+
+                {{ form_errors(form) }}
+
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'} }) }}          
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.count) }}
+                    {{ form_errors(form.count) }}         
+                    {{ form_widget(form.count, {'attr': {'class': 'form-control'} }) }}     
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.price) }}
+                    {{ form_errors(form.price) }}        
+                    {{ form_widget(form.price, {'attr': {'class': 'form-control'} }) }}    
+                </div>
+
+                {{ form_rest(form) }}
+
+                <div class="form-group group_button">
+                    <input class="btn btn-primary" type="submit" value="Добавить">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

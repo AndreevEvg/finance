@@ -34,7 +34,7 @@ class Product {
      */
     protected $price;
     
-     /**
+    /**
      * @ORM\Column(type="date")
      */
     protected $date;

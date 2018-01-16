@@ -15,7 +15,8 @@ class ProductRepository extends EntityRepository {
     public function findAllOrderedByName() {
 
         return $this->getEntityManager()
-                ->createQuery('SELECT p FROM AppFinanceBundle:Product p ORDER BY p.name ASC')
+                ->createQuery('SELECT p.name, p.price FROM AppFinanceBundle:Product p WHERE p.price < :price ORDER BY p.name ASC')
+                ->setParameter('price', '25')
                 ->getResult();
     }
 

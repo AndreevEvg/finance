@@ -17,7 +17,12 @@ class DefaultController extends Controller {
 
     public function indexAction() {
 
-        return $this->render('AppFinanceBundle:Default:index.html.twig');
+        $foo = $this->get("foo");
+        $name = $foo->send();
+        
+        return $this->render('AppFinanceBundle:Default:index.html.twig', [
+            'name' => $name,
+        ]);
     }
 
     //Создать запись
@@ -47,7 +52,7 @@ class DefaultController extends Controller {
         ]);
     }
 
-    //Отчеты
+    //Выбрать записи из БД
     public function reportsAction(Request $request) {
 
         $name = $request->request->get("text");
@@ -55,6 +60,9 @@ class DefaultController extends Controller {
         $product = $this->getDoctrine()
             ->getRepository('AppFinanceBundle:Product')
             ->findAllOrderedByName();
+//          ->findBy(
+//              array('name' => array('Ekaterina', 'Evgeniy'))
+//          );
 
 
         return $this->render('AppFinanceBundle:Default:reports.html.twig', [
